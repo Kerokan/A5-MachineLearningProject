@@ -22,4 +22,5 @@ def split_train_val(train_data, proportion=0.33):
     val_set   = data[:int(n*proportion)]
     print('Randomly splitted the data in two groups:', len(train_set), 'in train,', len(val_set), 'in validation')
 
-    return np.asarray(train_set), np.asarray(val_set) 
+    return np.asarray(train_set), np.asarray(val_set)
+    
