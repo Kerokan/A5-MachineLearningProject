@@ -66,3 +66,11 @@ def confusion_matrix(labels, predictions):
   print('|     False      |  {}  |   {}  |'.format(FP, TN))
   print('=================================')
   print('\nSensitivity: {:.3f}\nSpecificity: {:.3f}\nAccuracy: {:.3f}\n'.format(TP/(TP+FN), TN/(TN+FP), (TN+TP)/(TN+FN+TP+FP)))
+
+def contributionPCA(s):
+  print(" Axe ||   Contribution\t|| Cumulative contribution")
+  contrib_sum=0
+  for i in range(s.shape[0]):
+    contrib = s[s.shape[0]-1-i] / s.sum() * 100
+    contrib_sum = contrib_sum + contrib
+    print("  {}  ||      {:.1f} % \t|| \t   {:.1f} %    ".format(i+1, contrib, contrib_sum))
